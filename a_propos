@@ -1,0 +1,310 @@
+import cgi
+import cgitb
+
+import sqlite3
+import webbrowser
+import datetime
+from datetime import date
+from datetime import time
+import sys 
+import http.cookies
+import os
+import codecs
+import random
+
+
+cgitb.enable()
+
+
+sys.stdout=codecs.getwriter("utf-8")(sys.stdout.detach())
+
+print("content-type:text/html;charset=utf-8\n")
+
+print("""<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>EncyBe a propos</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Company - v2.1.0
+  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>Accueil EncyBe</title>
+  <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" type="text/css" href="assets/css/screen.css"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
+  </head>
+    <style type="text/css">/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: black;
+  padding: 10px 5px;
+}
+
+/* Style the header links */
+.header a {
+  float: center;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  display: flex;
+  display: inline-block;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: orange;
+  color: white;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: inline-block;
+    text-align: center;
+  }
+  .header-right {
+    float: none;
+  }
+}
+</style>
+  <body class="home-template">
+    <div class="header">
+  
+  <div class="header-center" style="margin-bottom: -20px; ">
+    <div style="width: 25%;display: inline-block;">
+      <a href="#" class="logo"><img src="assets/img/logo.png" alt="EncyBe"/></a>
+    </div>
+    <div style="display: inline-block;vertical-align: top;margin-top: 15px;">
+      <ul style="list-style-type: none;">
+        <li style="display: inline-block;"><a  href="accueil.py">Accueil</a></li>
+        <li style="display: inline-block;"><a href="profil.py">Profil</a></li>
+        <li style="display: inline-block;"><a href="article.py">Articles</a></li>
+        <li style="display: inline-block;"><a href="ajout_article.py">Ajouter un article</a></li>
+                <li style="display: inline-block;"><a href="messagerie.py">Messagerie</a></li>
+        <li style="display: inline-block;"><a href="#contact">Espace Logiciel</a></li>
+        <li style="display: inline-block;"><a href="contact.py">Contactez-nous</a></li>
+      </ul>
+    </div>
+    
+    
+  </div>
+
+
+
+
+</div>
+
+
+</div>
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <p><h4> Cette politique de confidentialité s'applique au site encybe.</h4><br>
+            <br>Nous estimons qu'il est important que vous sachiez comment sont collectées vos informations personelles et la sécurité que nous y accordons.<br>
+            Il serait souhaitable que tout utilisateur de la plateforme lise cette politique en toute entièreté.
+           <br>
+    
+            Ces données sont en effet toutes les informations capables d'authentifier un utilisateur.
+
+            Il s'agit notament des reférences suivantes:
+            <br>
+
+            -Nom<br>
+            -Prénom<br>
+            -Age <br>
+            -Adresse Mail<br>
+            -Numéro telephonique<br> 
+            -vos mots de passe ect...
+
+            <br>
+            Toutes les informations que nous recueillons auprès de vous peuvent être utilisé pour :
+            <br>
+            -Personnaliser votre expérience et répondre à vos besoins individuels
+            <br>
+            -Fournir du contenu personnalisé
+            <br>
+            -Ameliorer notre site web
+            <br>
+            Nous sommes le seul proprietaire des informations recueillies sur ce site ;
+            <br>
+            Vos informations personnelles ne seront pas vendus , echanger ou utilisé à des fins malveillants.
+            <br>
+            Néanmoins vous êtes responsable du contenu que vous diffusez en espace publique .Vous ne devez fournir que des contenus appropriés dans la mesure ou cela ne vous dérange pas.
+            <br>
+            Alors nous nous reservons le droit de supprimer tout contenu offensif ou violant les règles de la communauté et tout autre diffusion constituant une violation de droit d'auteurs , ou de marque ou autres détournement de la propriété intellectuelle , des usurpations d'identités , des conduites illicites ou des harcelements.
+            <br>
+            Merci pour l'attention!
+            <br>
+            <br>
+            <h3 style="color: orange">EncyBe</h3>
+
+          </p>
+
+              </div><!-- End sidebar tags-->
+
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>EncyBe</h3>
+            <p>
+               <br>
+              Cotonou, Benin<br>
+               <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Liens utiles</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Profil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Article</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Ajouter un article</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Messagerie</a></li>
+              
+              
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Autres</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              
+            </ul>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/company-free-html-bootstrap-template/ -->
+          
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>""")
